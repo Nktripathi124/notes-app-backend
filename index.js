@@ -10,7 +10,9 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-producti
 // Enable CORS for all routes
 app.use(cors());
 app.use(express.json());
-
+app.get('/', (req, res) => {
+  res.send('Welcome! Your Notes App Backend is running.');
+});
 // In-memory database simulation (shared schema with tenant ID approach)
 const database = {
   tenants: {
